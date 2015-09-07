@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LBCommon
+using LBCommon;
+
+namespace LBSimpleLogger
 {
-    public class Class1
+    public class SimpleLog //: ILog
     {
     }
 }
