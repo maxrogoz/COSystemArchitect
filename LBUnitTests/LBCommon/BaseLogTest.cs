@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Diagnostics;
 
 using LBCommon;
 
@@ -20,7 +21,7 @@ namespace LBCommonTests
             BaseLog Log = new BaseLogAccess();
             Log.Init(testAppName);
             Assert.AreEqual(Log.ApplicationName, testAppName);
-            Log.Write(LogType.Error, "Test");
+            Log.Write(EventLogEntryType.Error, "Test");
         }
 
         [TestMethod]
@@ -28,7 +29,7 @@ namespace LBCommonTests
         {
             BaseLog Log = new BaseLogAccess();
             Log.Init(testAppName);
-            Log.Write(LogType.Error, "Test");
+            Log.Write(EventLogEntryType.Error, "Test");
         }
 
         [TestMethod]
@@ -52,7 +53,7 @@ namespace LBCommonTests
         public void TestWriteWithoutInit()
         {
             BaseLog Log = new BaseLogAccess();
-            Log.Write(LogType.Error, "Test");
+            Log.Write(EventLogEntryType.Error, "Test");
         }
     }
 }
