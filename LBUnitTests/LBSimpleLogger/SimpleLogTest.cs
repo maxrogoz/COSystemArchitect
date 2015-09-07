@@ -10,21 +10,32 @@ namespace LBSimpleLogTests
     public class SimpleLogTest
     {
         static string testAppName = "Simple Log Test";
-        
+
         [TestMethod]
-        public void TestInitialization()
+        public void SimpleLogTestInitialization()
         {
+            DeleteLog();
+
             SimpleLog Log = new SimpleLog();
             Log.Init(testAppName);
+            Assert.IsTrue(EventLog.SourceExists(testAppName));
             Log.Init(testAppName);
         }
 
         [TestMethod]
-        public void TestWrite()
+        public void SimpleLogTestWrite()
         {
+            DeleteLog();
+
             SimpleLog Log = new SimpleLog();
             Log.Init(testAppName);
             Log.Write(EventLogEntryType.Error, "Test");
+        }
+
+        private void DeleteLog()
+        {
+            if (EventLog.Exists(testAppName))
+                EventLog.Delete(testAppName);
         }
 
     }

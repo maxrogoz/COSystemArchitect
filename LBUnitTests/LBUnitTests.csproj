@@ -50,11 +50,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="LBBackuper\FileProcessor\DirectoryCreatorTest.cs" />
     <Compile Include="LBCommon\BaseLogTest.cs" />
     <Compile Include="LBSimpleLogger\SimpleLogTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LBBackuper\LBBackuper.csproj">
+      <Project>{3613b1d2-7c1d-4d58-8c02-a7b334faee82}</Project>
+      <Name>LBBackuper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LBCommon\LBCommon.csproj">
       <Project>{e7fb858c-abef-4bc4-a240-f41c0d6ac535}</Project>
       <Name>LBCommon</Name>
@@ -67,6 +72,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
