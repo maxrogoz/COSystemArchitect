@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace LBBackuper
 {
-    class Program
+    public interface ITaskQueue
     {
-        static void Main(string[] args)
-        {
-        }
+        void QueueTask(ITask task);
     }
 }

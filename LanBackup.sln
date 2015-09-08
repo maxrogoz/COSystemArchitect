@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBUnitTests", "LBUnitTests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBBackuper", "LBBackuper\LBBackuper.csproj", "{3613B1D2-7C1D-4D58-8C02-A7B334FAEE82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBBackuperTest", "LBBackuperTest\LBBackuperTest.csproj", "{F79E93C8-E482-4159-B2C8-37A3980F1844}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{3613B1D2-7C1D-4D58-8C02-A7B334FAEE82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3613B1D2-7C1D-4D58-8C02-A7B334FAEE82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3613B1D2-7C1D-4D58-8C02-A7B334FAEE82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F79E93C8-E482-4159-B2C8-37A3980F1844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F79E93C8-E482-4159-B2C8-37A3980F1844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F79E93C8-E482-4159-B2C8-37A3980F1844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F79E93C8-E482-4159-B2C8-37A3980F1844}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

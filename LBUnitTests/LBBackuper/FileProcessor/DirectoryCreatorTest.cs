@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 
-using LBBackuper.FileProcessor;
+using LBBackuper;
 
 namespace LBUnitTests.LBBackuper.FileProcessor
 {
