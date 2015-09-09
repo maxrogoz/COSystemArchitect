@@ -1,0 +1,64 @@
+﻿@model IEnumerable<LBDataModel.BackupTask>
+
+@{
+    ViewBag.Title = "Index";
+
+    var machine = ((LBDataModel.Machine)ViewData["Machine"]);
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.DisplayNameFor(model => model.Machine.IpAdress)
+    @Html.DisplayFor(modelItem => machine.IpAdress)
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { machineId=machine.MachineId })
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SourceFolder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SourceUser.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DestFolder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DestUser.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disabled)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SourceFolder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SourceUser.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DestFolder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DestUser.Name)
+        </td>
+        <td>
+            @Html.CheckBoxFor(modelItem => item.Disabled)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BackupTaskId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BackupTaskId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BackupTaskId })
+        </td>
+    </tr>
+}
+
+</table>

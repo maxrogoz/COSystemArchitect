@@ -1,0 +1,61 @@
+﻿@model LBDataModel.BackupTask
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>BackupTask</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Machine.IpAdress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Machine.IpAdress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SourceFolder)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SourceFolder)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SourceUser)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SourceUser.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DestFolder)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DestFolder)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DestUser)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DestUser.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Disabled)
+    </div>
+    <div class="display-field">
+        @Html.CheckBoxFor(model => model.Disabled)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,42 @@
+﻿@model LBDataModel.Log
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Log</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LogDateTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LogDateTime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IpAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IpAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Service)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Service)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Message)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Message)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

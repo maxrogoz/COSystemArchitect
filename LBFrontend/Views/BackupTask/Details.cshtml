@@ -1,0 +1,57 @@
+﻿@model LBDataModel.BackupTask
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>BackupTask</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Machine.IpAdress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Machine.IpAdress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SourceFolder)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SourceFolder)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SourceUser)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SourceUser.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DestFolder)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DestFolder)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DestUser)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DestUser.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Disabled)
+    </div>
+    <div class="display-field">
+        @Html.CheckBoxFor(model => model.Disabled)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.BackupTaskId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

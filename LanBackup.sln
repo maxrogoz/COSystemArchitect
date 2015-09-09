@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBBackuper", "LBBackuper\LB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBBackuperTest", "LBBackuperTest\LBBackuperTest.csproj", "{F79E93C8-E482-4159-B2C8-37A3980F1844}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBFrontend", "LBFrontend\LBFrontend.csproj", "{9E739B35-690D-4D3D-ABDF-522549DEB445}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBDataModel", "LBDataModel\LBDataModel.csproj", "{3138B216-1997-4E41-B923-BF79CDF2BF99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{F79E93C8-E482-4159-B2C8-37A3980F1844}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F79E93C8-E482-4159-B2C8-37A3980F1844}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F79E93C8-E482-4159-B2C8-37A3980F1844}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E739B35-690D-4D3D-ABDF-522549DEB445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E739B35-690D-4D3D-ABDF-522549DEB445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E739B35-690D-4D3D-ABDF-522549DEB445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E739B35-690D-4D3D-ABDF-522549DEB445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3138B216-1997-4E41-B923-BF79CDF2BF99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3138B216-1997-4E41-B923-BF79CDF2BF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3138B216-1997-4E41-B923-BF79CDF2BF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3138B216-1997-4E41-B923-BF79CDF2BF99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
