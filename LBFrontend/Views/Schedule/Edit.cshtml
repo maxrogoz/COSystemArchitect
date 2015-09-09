@@ -1,10 +1,10 @@
 ﻿@model LBDataModel.Schedule
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit schedule";
 }
 
-<h2>Edit</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -14,14 +14,6 @@
         <legend>Schedule</legend>
 
         @Html.HiddenFor(model => model.ScheduleId)
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.BackupTaskId, "BackupTask")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("BackupTaskId", String.Empty)
-            @Html.ValidationMessageFor(model => model.BackupTaskId)
-        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Time)

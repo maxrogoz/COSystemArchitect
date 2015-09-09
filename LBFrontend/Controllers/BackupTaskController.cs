@@ -17,16 +17,14 @@ namespace LBFrontend.Controllers
         //
         // GET: /BackupTask/
 
-        public ActionResult Index(int machineId = 0)
+        public ActionResult Index(int id = 0)
         {
-            Machine machine = db.Machines.Find(machineId);
+            Machine machine = db.Machines.Find(id);
             if (machine == null)
             {
                 return HttpNotFound();
             }
             ViewData["Machine"] = machine;
-            //var backuptasks = machine.BackupTasks.First(). db.BackupTasks.Where(bt => bt.MachineId == machineId).Include(b => b.Machine)
-            //    .Include(b => b.SourceUser).Include(b => b.DestUser);
             return View(machine.BackupTasks.ToList());
         }
 
@@ -46,13 +44,16 @@ namespace LBFrontend.Controllers
         //
         // GET: /BackupTask/Create
 
-        public ActionResult Create(int machineId = 0)
+        public ActionResult Create(int id = 0)
         {
-            ViewBag.MachineId = db.Machines.Find(machineId);
-            if (ViewBag.MachineId == null)
+            Machine machine = db.Machines.Find(id);
+            if (machine == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.MachineId = machine.MachineId;
+            ViewBag.SourceUserId = new SelectList(db.Users, "UserId", "Name");
+            ViewBag.DestUserId = new SelectList(db.Users, "UserId", "Name");
             return View();
         }
 
@@ -67,10 +68,12 @@ namespace LBFrontend.Controllers
             {
                 db.BackupTasks.Add(backuptask);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = backuptask.MachineId });
             }
 
-            ViewBag.MachineId = new SelectList(db.Machines, "MachineId", "IpAdress", backuptask.MachineId);
+            ViewBag.MachineId = backuptask.MachineId;
+            ViewBag.SourceUserId = new SelectList(db.Users, "UserId", "Name");
+            ViewBag.DestUserId = new SelectList(db.Users, "UserId", "Name");
             return View(backuptask);
         }
 
@@ -84,7 +87,8 @@ namespace LBFrontend.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MachineId = new SelectList(db.Machines, "MachineId", "IpAdress", backuptask.MachineId);
+            ViewBag.SourceUserId = new SelectList(db.Users, "UserId", "Name");
+            ViewBag.DestUserId = new SelectList(db.Users, "UserId", "Name");
             return View(backuptask);
         }
 
@@ -99,9 +103,10 @@ namespace LBFrontend.Controllers
             {
                 db.Entry(backuptask).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = backuptask.MachineId });
             }
-            ViewBag.MachineId = new SelectList(db.Machines, "MachineId", "IpAdress", backuptask.MachineId);
+            ViewBag.SourceUserId = new SelectList(db.Users, "UserId", "Name");
+            ViewBag.DestUserId = new SelectList(db.Users, "UserId", "Name");
             return View(backuptask);
         }
 

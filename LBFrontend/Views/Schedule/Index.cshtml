@@ -1,13 +1,27 @@
 ﻿@model IEnumerable<LBDataModel.Schedule>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "List of schedules";
+
+    var backupTask = ((LBDataModel.BackupTask)ViewData["BackupTask"]);
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.DisplayNameFor(model => model.BackupTask.Machine.IpAdress)
+    @backupTask.Machine.IpAdress
+    <br/>
+    @Html.DisplayNameFor(model => model.BackupTask.SourceFolder)
+    @backupTask.SourceFolder
+    <br/>
+    @Html.DisplayNameFor(model => model.BackupTask.DestFolder)
+    @backupTask.DestFolder
+</p>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { id=backupTask.BackupTaskId }) |
+    @Html.ActionLink("Back to the list of backup tasks", "Index", "BackupTask", new { id=backupTask.MachineId }, null)
 </p>
 <table>
     <tr>
@@ -30,7 +44,6 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ScheduleId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ScheduleId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ScheduleId })
         </td>
     </tr>

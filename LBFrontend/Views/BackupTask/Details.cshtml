@@ -1,10 +1,10 @@
 ﻿@model LBDataModel.BackupTask
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Backup tasks details";
 }
 
-<h2>Details</h2>
+<h2>@ViewBag.Title</h2>
 
 <fieldset>
     <legend>BackupTask</legend>
@@ -53,5 +53,6 @@
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.BackupTaskId }) |
+    @Html.ActionLink("Configure schedules", "Index", "Schedule", new { id=Model.BackupTaskId }, null) |
     @Html.ActionLink("Back to List", "Index")
 </p>

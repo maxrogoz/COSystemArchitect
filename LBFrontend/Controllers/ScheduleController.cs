@@ -17,31 +17,29 @@ namespace LBFrontend.Controllers
         //
         // GET: /Schedule/
 
-        public ActionResult Index()
+        public ActionResult Index(int id = 0)
         {
-            var schedules = db.Schedules.Include(s => s.BackupTask);
-            return View(schedules.ToList());
-        }
-
-        //
-        // GET: /Schedule/Details/5
-
-        public ActionResult Details(int id = 0)
-        {
-            Schedule schedule = db.Schedules.Find(id);
-            if (schedule == null)
+            BackupTask task = db.BackupTasks.Find(id);
+            if (task == null)
             {
                 return HttpNotFound();
             }
-            return View(schedule);
+            //var schedules = db.Schedules.Include(s => s.BackupTask);
+            ViewData["BackupTask"] = task;
+            return View(task.Schedules.ToList());
         }
 
         //
         // GET: /Schedule/Create
 
-        public ActionResult Create()
+        public ActionResult Create(int id = 0)
         {
-            ViewBag.BackupTaskId = new SelectList(db.BackupTasks, "BackupTaskId", "SourceFolder");
+            BackupTask task = db.BackupTasks.Find(id);
+            if (task == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.BackupTaskId = task.BackupTaskId;//new SelectList(db.BackupTasks, "BackupTaskId", "SourceFolder");
             return View();
         }
 
@@ -56,10 +54,10 @@ namespace LBFrontend.Controllers
             {
                 db.Schedules.Add(schedule);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = schedule.BackupTaskId });
             }
 
-            ViewBag.BackupTaskId = new SelectList(db.BackupTasks, "BackupTaskId", "SourceFolder", schedule.BackupTaskId);
+            ViewBag.BackupTaskId = schedule.BackupTaskId;
             return View(schedule);
         }
 
@@ -73,7 +71,6 @@ namespace LBFrontend.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.BackupTaskId = new SelectList(db.BackupTasks, "BackupTaskId", "SourceFolder", schedule.BackupTaskId);
             return View(schedule);
         }
 
@@ -88,9 +85,8 @@ namespace LBFrontend.Controllers
             {
                 db.Entry(schedule).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = schedule.BackupTaskId });
             }
-            ViewBag.BackupTaskId = new SelectList(db.BackupTasks, "BackupTaskId", "SourceFolder", schedule.BackupTaskId);
             return View(schedule);
         }
 

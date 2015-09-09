@@ -1,10 +1,10 @@
 ﻿@model LBDataModel.BackupTask
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create backup task";
 }
 
-<h2>Create</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
@@ -13,13 +13,7 @@
     <fieldset>
         <legend>BackupTask</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.MachineId, "Machine")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("MachineId", String.Empty)
-            @Html.ValidationMessageFor(model => model.MachineId)
-        </div>
+        @Html.Hidden("MachineId")
 
         <div class="editor-label">
             @Html.LabelFor(model => model.SourceFolder)
