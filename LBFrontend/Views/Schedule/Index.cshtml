@@ -2,22 +2,29 @@
 
 @{
     ViewBag.Title = "List of schedules";
-
-    var backupTask = ((LBDataModel.BackupTask)ViewData["BackupTask"]);
 }
 
 <h2>@ViewBag.Title</h2>
 
-<p>
+<div class="display-label">
     @Html.DisplayNameFor(model => model.BackupTask.Machine.IpAdress)
-    @backupTask.Machine.IpAdress
-    <br/>
+</div>
+<div class="display-field">
+    @ViewBag.BackupTask.Machine.IpAdress
+</div>
+<div class="display-label">
     @Html.DisplayNameFor(model => model.BackupTask.SourceFolder)
-    @backupTask.SourceFolder
-    <br/>
+</div>
+<div class="display-field">
+    @ViewBag.BackupTask.SourceFolder
+</div>
+<div class="display-label">
     @Html.DisplayNameFor(model => model.BackupTask.DestFolder)
-    @backupTask.DestFolder
-</p>
+</div>
+<div class="display-field">
+    @ViewBag.BackupTask.DestFolder
+</div>
+<br/>
 
 <p>
     @Html.ActionLink("Create New", "Create", new { id=backupTask.BackupTaskId }) |
@@ -26,9 +33,6 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.BackupTask.SourceFolder)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Time)
         </th>
         <th></th>
@@ -36,9 +40,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.BackupTask.SourceFolder)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Time)
         </td>

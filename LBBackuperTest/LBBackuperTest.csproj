@@ -37,6 +37,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,23 +49,61 @@
     <Compile Include="IoC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\BackupServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\LBCommon.BackupTaskDef.datasource" />
+    <None Include="Service References\BackupServiceReference\BackupTaskService.wsdl" />
+    <None Include="Service References\BackupServiceReference\BackupTaskService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BackupServiceReference\BackupTaskService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BackupServiceReference\BackupTaskService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LBBackuper\LBBackuper.csproj">
       <Project>{3613b1d2-7c1d-4d58-8c02-a7b334faee82}</Project>
       <Name>LBBackuper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LBBackupTaskService\LBBackupTaskService.csproj">
+      <Project>{391983ec-ef71-49eb-bbc2-cc54de6f1ffc}</Project>
+      <Name>LBBackupTaskService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LBCommon\LBCommon.csproj">
       <Project>{e7fb858c-abef-4bc4-a240-f41c0d6ac535}</Project>
       <Name>LBCommon</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LBSimpleLogger\LBSimpleLogger.csproj">
+    <ProjectReference Include="..\LBSimpleLogger\LBLogger.csproj">
       <Project>{7a73716c-6df3-4678-bd81-8f1e33a2e434}</Project>
-      <Name>LBSimpleLogger</Name>
+      <Name>LBLogger</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BackupServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BackupServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BackupServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BackupServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

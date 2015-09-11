@@ -3,14 +3,24 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+using LBCommon;
+
 namespace LBDataModel
 {
-    public partial class User
+    public partial class User : IUserDef
     {
         public User()
         {
             this.DestBackupTasks = new HashSet<BackupTask>();
             this.SourceBackupTasks = new HashSet<BackupTask>();
+        }
+
+        public User(IUserDef def)
+            : this()
+        {
+            Login = def.Login;
+            Domain = def.Domain;
+            Password = def.Password;
         }
     
         [Key]

@@ -18,6 +18,9 @@
             @Html.DisplayNameFor(model => model.Service)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.MessageType)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Message)
         </th>
         <th></th>
@@ -34,11 +37,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.Service)
         </td>
+        <th>
+            @Html.DisplayFor(model => item.MessageType)
+        </th>
         <td>
             @Html.DisplayFor(modelItem => item.Message)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "Details", new { id=item.LogId }) |
         </td>
     </tr>
 }

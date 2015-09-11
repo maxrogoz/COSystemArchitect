@@ -69,7 +69,7 @@ namespace LBBackuper
 
         private void Run()
         {
-            Logger.Write(EventLogEntryType.Information, "Worker thread started");
+            Logger.WriteInfo("Worker thread started");
             while (!_stoped)
             {
                 try
@@ -83,10 +83,10 @@ namespace LBBackuper
                 }
                 catch (Exception e)
                 {
-                    Logger.Write(EventLogEntryType.Error, "Error while processing the schedule\n" + e.Message);
+                    Logger.WriteError("Error while processing the schedule\n" + e.Message);
                 }
             }
-            Logger.Write(EventLogEntryType.Information, "Worker thread stoped");
+            Logger.WriteInfo("Worker thread stoped");
         }
 
         private void DoProcessTasks()

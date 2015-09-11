@@ -12,7 +12,7 @@ namespace LBFrontend.Controllers
 {
     public class BackupTaskController : Controller
     {
-        private LBFrontendContext db = new LBFrontendContext();
+        private LBDataModelContext db = new LBDataModelContext();
 
         //
         // GET: /BackupTask/
@@ -51,9 +51,8 @@ namespace LBFrontend.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MachineId = machine.MachineId;
-            ViewBag.SourceUserId = new SelectList(db.Users, "UserId", "Name");
-            ViewBag.DestUserId = new SelectList(db.Users, "UserId", "Name");
+
+            InitializeFields(null);
             return View();
         }
 
@@ -71,9 +70,7 @@ namespace LBFrontend.Controllers
                 return RedirectToAction("Index", new { id = backuptask.MachineId });
             }
 
-            ViewBag.MachineId = backuptask.MachineId;
-            ViewBag.SourceUserId = new SelectList(db.Users, "UserId", "Name");
-            ViewBag.DestUserId = new SelectList(db.Users, "UserId", "Name");
+            InitializeFields(backuptask);
             return View(backuptask);
         }
 
@@ -87,8 +84,8 @@ namespace LBFrontend.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.SourceUserId = new SelectList(db.Users, "UserId", "Name");
-            ViewBag.DestUserId = new SelectList(db.Users, "UserId", "Name");
+
+            InitializeFields(backuptask);
             return View(backuptask);
         }
 
@@ -105,8 +102,8 @@ namespace LBFrontend.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index", new { id = backuptask.MachineId });
             }
-            ViewBag.SourceUserId = new SelectList(db.Users, "UserId", "Name");
-            ViewBag.DestUserId = new SelectList(db.Users, "UserId", "Name");
+
+            InitializeFields(backuptask);
             return View(backuptask);
         }
 
@@ -141,5 +138,15 @@ namespace LBFrontend.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        private void InitializeFields(BackupTask backuptask)
+        {
+            if (backuptask != null)
+                ViewBag.MachineId = backuptask.MachineId;
+
+            ViewBag.SourceUserId = new SelectList(db.Users, "UserId", "Name", backuptask == null ? null : backuptask.SourceUserId);
+            ViewBag.DestUserId = new SelectList(db.Users, "UserId", "Name", backuptask == null ? null : backuptask.DestUserId);
+        }
+
     }
 }

@@ -12,7 +12,7 @@ namespace LBFrontend.Controllers
 {
     public class MachineController : Controller
     {
-        private LBFrontendContext db = new LBFrontendContext();
+        private LBDataModelContext db = new LBDataModelContext();
 
         //
         // GET: /Machine/

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBCommon", "LBCommon\LBCommon.csproj", "{E7FB858C-ABEF-4BC4-A240-F41C0D6AC535}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBSimpleLogger", "LBSimpleLogger\LBSimpleLogger.csproj", "{7A73716C-6DF3-4678-BD81-8F1E33A2E434}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBLogger", "LBSimpleLogger\LBLogger.csproj", "{7A73716C-6DF3-4678-BD81-8F1E33A2E434}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBUnitTests", "LBUnitTests\LBUnitTests.csproj", "{FE12B30E-06E4-4C06-A0C9-6E333AFFA594}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBFrontend", "LBFrontend\LBFrontend.csproj", "{9E739B35-690D-4D3D-ABDF-522549DEB445}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBDataModel", "LBDataModel\LBDataModel.csproj", "{3138B216-1997-4E41-B923-BF79CDF2BF99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBBackupTaskService", "LBBackupTaskService\LBBackupTaskService.csproj", "{391983EC-EF71-49EB-BBC2-CC54DE6F1FFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{3138B216-1997-4E41-B923-BF79CDF2BF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3138B216-1997-4E41-B923-BF79CDF2BF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3138B216-1997-4E41-B923-BF79CDF2BF99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391983EC-EF71-49EB-BBC2-CC54DE6F1FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391983EC-EF71-49EB-BBC2-CC54DE6F1FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391983EC-EF71-49EB-BBC2-CC54DE6F1FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391983EC-EF71-49EB-BBC2-CC54DE6F1FFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

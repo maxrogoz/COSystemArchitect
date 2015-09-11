@@ -18,15 +18,15 @@ namespace LBBackuper
         {
             try
             {
-                Logger.Write(EventLogEntryType.Information, "Starting backup task " + ToString());
+                Logger.WriteInfo("Starting backup task " + ToString());
 
                 FileProcessor.CopyPathWithUserRights(SourceFolder, SourceUser, DestFolder, DestUser);
 
-                Logger.Write(EventLogEntryType.Information, "Backup task " + ToString() + " sucessfuly finished");
+                Logger.WriteInfo("Backup task " + ToString() + " sucessfuly finished");
             }
             catch (Exception e)
             {
-                Logger.Write(System.Diagnostics.EventLogEntryType.Error, "Error executing backup task " + ToString() + "\n" + e.Message);
+                Logger.WriteError("Error executing backup task " + ToString() + "\n" + e.Message);
             }
         }
 
@@ -34,11 +34,11 @@ namespace LBBackuper
 
         public string SourceFolder { get; set; }
 
-        public IUser SourceUser { get; set; }
+        public IUserDef SourceUser { get; set; }
 
         public string DestFolder { get; set; }
 
-        public IUser DestUser { get; set; }
+        public IUserDef DestUser { get; set; }
 
         public override string ToString()
         {

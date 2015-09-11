@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="LBBackuper\FileProcessor\DirectoryCreatorTest.cs" />
     <Compile Include="LBCommon\BaseLogTest.cs" />
-    <Compile Include="LBSimpleLogger\SimpleLogTest.cs" />
+    <Compile Include="LBLogger\SimpleLogTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,9 +64,9 @@
       <Project>{e7fb858c-abef-4bc4-a240-f41c0d6ac535}</Project>
       <Name>LBCommon</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LBSimpleLogger\LBSimpleLogger.csproj">
+    <ProjectReference Include="..\LBSimpleLogger\LBLogger.csproj">
       <Project>{7a73716c-6df3-4678-bd81-8f1e33a2e434}</Project>
-      <Name>LBSimpleLogger</Name>
+      <Name>LBLogger</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

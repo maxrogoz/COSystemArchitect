@@ -3,9 +3,9 @@ using LBDataModel;
 
 namespace LBDataModel
 {
-    public class LBFrontendContext : DbContext
+    public class LBDataModelContext : DbContext
     {
-        public LBFrontendContext() : base("name=LBFrontendContext")
+        public LBDataModelContext() : base("name=LBDataModelContext")
         {
         }
 

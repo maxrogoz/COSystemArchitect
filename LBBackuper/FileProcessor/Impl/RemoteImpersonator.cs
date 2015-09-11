@@ -17,7 +17,7 @@ namespace LBBackuper
         /// </summary>
         /// <param name="user">The user whose permissions are used to impersonalization</param>
         /// <param name="user">Delegate, executed in impersonate mode</param>
-        public static void ImpersonateRemoteUser(IUser user, string remotePath, Action impersonateDelegate)
+        public static void ImpersonateRemoteUser(IUserDef user, string remotePath, Action impersonateDelegate)
         {
             if (user == null)
             {

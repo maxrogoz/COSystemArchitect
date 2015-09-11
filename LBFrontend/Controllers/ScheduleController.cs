@@ -12,7 +12,7 @@ namespace LBFrontend.Controllers
 {
     public class ScheduleController : Controller
     {
-        private LBFrontendContext db = new LBFrontendContext();
+        private LBDataModelContext db = new LBDataModelContext();
 
         //
         // GET: /Schedule/
@@ -25,7 +25,7 @@ namespace LBFrontend.Controllers
                 return HttpNotFound();
             }
             //var schedules = db.Schedules.Include(s => s.BackupTask);
-            ViewData["BackupTask"] = task;
+            ViewBag.BackupTask = task;
             return View(task.Schedules.ToList());
         }
 
@@ -39,7 +39,7 @@ namespace LBFrontend.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.BackupTaskId = task.BackupTaskId;//new SelectList(db.BackupTasks, "BackupTaskId", "SourceFolder");
+            ViewBag.BackupTask = task;
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace LBFrontend.Controllers
                 return RedirectToAction("Index", new { id = schedule.BackupTaskId });
             }
 
-            ViewBag.BackupTaskId = schedule.BackupTaskId;
+            ViewBag.BackupTask = schedule.BackupTask;
             return View(schedule);
         }
 

@@ -346,6 +346,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LBCommon\LBCommon.csproj">
+      <Project>{e7fb858c-abef-4bc4-a240-f41c0d6ac535}</Project>
+      <Name>LBCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LBDataModel\LBDataModel.csproj">
       <Project>{3138b216-1997-4e41-b923-bf79cdf2bf99}</Project>
       <Name>LBDataModel</Name>

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+using LBCommon;
+
 namespace LBDataModel
 {
-    public partial class BackupTask
+    public partial class BackupTask : IBackupTaskDef
     {
         public BackupTask()
         {
@@ -37,5 +39,56 @@ namespace LBDataModel
         public virtual User SourceUser { get; set; }
         
         public virtual ICollection<Schedule> Schedules { get; set; }
+        
+        
+        
+        [NotMapped]
+        ICollection<IBackupScheduleDef> IBackupTaskDef.Schedules 
+        {
+            get
+            {
+                var list = new List<IBackupScheduleDef>();
+                foreach (var sch in Schedules)
+                    list.Add(sch);
+                return list;
+            }
+            set
+            {
+                ICollection<Schedule> schcol = new List<Schedule>();
+                foreach(var sch in value)
+                {
+                    var ns = new Schedule(sch);
+                    ns.BackupTaskId = this.BackupTaskId;
+                    schcol.Add(ns);
+                }
+                Schedules = schcol;
+            }
+        }
+
+        [NotMapped]
+        IUserDef IBackupTaskDef.SourceUser
+        {
+            get
+            {
+                return SourceUser;
+            }
+            set
+            {
+                SourceUser = new User(value);
+            }
+        }
+
+        [NotMapped]
+        IUserDef IBackupTaskDef.DestUser
+        {
+            get
+            {
+                return DestUser;
+            }
+            set
+            {
+                DestUser = new User(value);
+            }
+        }
     }
 }

@@ -6,6 +6,26 @@
 
 <h2>@ViewBag.Title</h2>
 
+<div class="display-label">
+    @Html.DisplayNameFor(model => model.BackupTask.Machine.IpAdress)
+</div>
+<div class="display-field">
+    @ViewBag.BackupTask.Machine.IpAdress
+</div>
+<div class="display-label">
+    @Html.DisplayNameFor(model => model.BackupTask.SourceFolder)
+</div>
+<div class="display-field">
+    @ViewBag.BackupTask.SourceFolder
+</div>
+<div class="display-label">
+    @Html.DisplayNameFor(model => model.BackupTask.DestFolder)
+</div>
+<div class="display-field">
+    @ViewBag.BackupTask.DestFolder
+</div>
+<br/>
+
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
@@ -13,7 +33,7 @@
     <fieldset>
         <legend>Schedule</legend>
 
-        @Html.Hidden("BackupTaskId")
+        @Html.Hidden("BackupTaskId", (object)ViewBag.BackupTask.BackupTaskId.ToString())
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Time)

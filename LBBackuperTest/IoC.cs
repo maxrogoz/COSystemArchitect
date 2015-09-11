@@ -8,7 +8,7 @@ using Ninject.Modules;
 
 using LBCommon;
 using LBBackuper;
-using LBSimpleLogger;
+using LBLogger;
 
 namespace LBBackuperTest
 {
@@ -16,14 +16,13 @@ namespace LBBackuperTest
     {
         public override void Load()
         {
-            SimpleLog.DefaultApplicationName = "LBBackuperTest";
-
-            this.Bind<ILog>().To<SimpleLog>();
+            this.Bind<ILog>().To<BaseLogger>();
             this.Bind<IFileProcessor>().To<FileProcessor>();
-            this.Bind<ITask>().To<BackupTask>();
+            this.Bind<ITask>().To<LBBackuper.BackupTask>();
             this.Bind<ITaskQueue>().To<TaskQueue>();
             this.Bind<ITaskProcessor>().To<TaskProcessor>();
-            this.Bind<ISchedule>().To<BackupSchedule>();
+            this.Bind<ISchedule>().To<LBBackuper.BackupSchedule>();
         }
+
     }
 }

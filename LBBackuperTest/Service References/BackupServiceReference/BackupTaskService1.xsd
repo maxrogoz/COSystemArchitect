@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/LBCommon" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LBCommon" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1/Service/BackupTaskService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfBackupTaskDef">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BackupTaskDef" nillable="true" type="tns:BackupTaskDef" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBackupTaskDef" nillable="true" type="tns:ArrayOfBackupTaskDef" />
+  <xs:complexType name="BackupTaskDef">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DestFolder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestUser" nillable="true" type="tns:UserDef" />
+      <xs:element minOccurs="0" name="Schedules" nillable="true" type="tns:ArrayOfBackupScheduleDef" />
+      <xs:element minOccurs="0" name="SourceFolder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceUser" nillable="true" type="tns:UserDef" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BackupTaskDef" nillable="true" type="tns:BackupTaskDef" />
+  <xs:complexType name="UserDef">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserDef" nillable="true" type="tns:UserDef" />
+  <xs:complexType name="ArrayOfBackupScheduleDef">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BackupScheduleDef" nillable="true" type="tns:BackupScheduleDef" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBackupScheduleDef" nillable="true" type="tns:ArrayOfBackupScheduleDef" />
+  <xs:complexType name="BackupScheduleDef">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Time" type="ser:duration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BackupScheduleDef" nillable="true" type="tns:BackupScheduleDef" />
+</xs:schema>

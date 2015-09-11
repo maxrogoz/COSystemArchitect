@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace LBCommon
 {
-    public class IUser
+    public interface IBackupScheduleDef
     {
-        public string Login { get; set; }
-        public string Domain { get; set; }
-        public string Password { get; set; }
+        TimeSpan Time { get; set; }
     }
 }

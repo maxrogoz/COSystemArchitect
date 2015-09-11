@@ -36,6 +36,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Channels" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,10 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseLog.cs" />
-    <Compile Include="Enums\LogType.cs" />
+    <Compile Include="Helpers\WcfHelper.cs" />
+    <Compile Include="Interfaces\IBackupScheduleDef.cs" />
+    <Compile Include="Interfaces\IBackupTaskDef.cs" />
     <Compile Include="Interfaces\ILog.cs" />
-    <Compile Include="Interfaces\IUser.cs" />
+    <Compile Include="Implementations\BackupScheduleDef.cs" />
+    <Compile Include="Implementations\BackupTaskDef.cs" />
+    <Compile Include="Implementations\UserDef.cs" />
+    <Compile Include="Interfaces\ILogWriter.cs" />
+    <Compile Include="Interfaces\IUserDef.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

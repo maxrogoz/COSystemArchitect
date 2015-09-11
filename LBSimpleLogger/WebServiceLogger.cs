@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LBCommon
+namespace LBLogger
 {
-    public enum LogType
+    class WebServiceLogger
     {
-        Error = 1,
-        Warning = 2,
-        Info = 3
     }
 }
