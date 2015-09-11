@@ -64,6 +64,32 @@ namespace LBUnitTests.LBBackuper.FileProcessor
             //dc.CreateDirectory(tempPath);
             //Assert.IsTrue(Directory.Exists(tempPath));
             //Directory.Delete(tempPath);
+
+            //TimeSpan time = DateTime.Now.TimeOfDay;
+
+            //ITask task = new LBBackuper.BackupTask() {
+            //    SourceFolder = @"d:\ctest",
+            //    DestFolder = @"\\MROGOZA-H\Public\ct",
+            //    FileProcessor = AppKernel.Get<IFileProcessor>(),
+            //    Logger =  AppKernel.Get<ILog>()
+            //};
+
+            //ISchedule s1 = new LBBackuper.BackupSchedule()
+            //{
+            //    Time = time.Add(new TimeSpan(0, 0, 5)),
+            //    Task = task
+            //};
+            //ISchedule s2 = new LBBackuper.BackupSchedule()
+            //{
+            //    Time = time.Add(new TimeSpan(0, 1, 5)),
+            //    Task = task
+            //};
+            //ISchedule s3 = new LBBackuper.BackupSchedule()
+            //{
+            //    Time = time.Add(new TimeSpan(0, 1, 6)),
+            //    Task = task
+            //};
+
         }
     }
 }

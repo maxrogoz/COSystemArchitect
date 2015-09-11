@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBDataModel", "LBDataModel\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBBackupTaskService", "LBBackupTaskService\LBBackupTaskService.csproj", "{391983EC-EF71-49EB-BBC2-CC54DE6F1FFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBLogService", "LBLogService\LBLogService.csproj", "{05380B1F-687A-49DE-990D-99243AE10CD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{391983EC-EF71-49EB-BBC2-CC54DE6F1FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{391983EC-EF71-49EB-BBC2-CC54DE6F1FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{391983EC-EF71-49EB-BBC2-CC54DE6F1FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05380B1F-687A-49DE-990D-99243AE10CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05380B1F-687A-49DE-990D-99243AE10CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05380B1F-687A-49DE-990D-99243AE10CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05380B1F-687A-49DE-990D-99243AE10CD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

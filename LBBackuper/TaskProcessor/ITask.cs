@@ -11,5 +11,6 @@ namespace LBBackuper
     public interface ITask
     {
         void Execute();
+        object Params { get; set; }
     }
 }

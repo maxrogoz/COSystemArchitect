@@ -9,6 +9,7 @@ using Ninject.Modules;
 using LBCommon;
 using LBBackuper;
 using LBLogger;
+using LBBackupTaskService;
 
 namespace LBBackuperTest
 {
@@ -18,10 +19,9 @@ namespace LBBackuperTest
         {
             this.Bind<ILog>().To<BaseLogger>();
             this.Bind<IFileProcessor>().To<FileProcessor>();
-            this.Bind<ITask>().To<LBBackuper.BackupTask>();
             this.Bind<ITaskQueue>().To<TaskQueue>();
-            this.Bind<ITaskProcessor>().To<TaskProcessor>();
-            this.Bind<ISchedule>().To<LBBackuper.BackupSchedule>();
+            this.Bind<IScheduler>().To<Scheduler>();
+            this.Bind<IConfigReader>().To<WebServiceBackupConfigReader>();
         }
 
     }

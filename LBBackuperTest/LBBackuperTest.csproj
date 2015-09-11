@@ -54,6 +54,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\LogServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -66,6 +71,16 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\BackupServiceReference\BackupTaskService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LogServiceReference\LogService.wsdl" />
+    <None Include="Service References\LogServiceReference\LogService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LogServiceReference\LogService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LogServiceReference\LogService2.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -82,6 +97,10 @@
       <Project>{e7fb858c-abef-4bc4-a240-f41c0d6ac535}</Project>
       <Name>LBCommon</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LBLogService\LBLogService.csproj">
+      <Project>{05380b1f-687a-49de-990d-99243ae10cd9}</Project>
+      <Name>LBLogService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LBSimpleLogger\LBLogger.csproj">
       <Project>{7a73716c-6df3-4678-bd81-8f1e33a2e434}</Project>
       <Name>LBLogger</Name>
@@ -92,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\BackupServiceReference\" />
+    <WCFMetadataStorage Include="Service References\LogServiceReference\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\BackupServiceReference\configuration91.svcinfo" />
@@ -101,6 +121,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\BackupServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LogServiceReference\LogService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LogServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LogServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LogServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

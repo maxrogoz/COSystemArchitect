@@ -47,18 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurator\Impl\BaseBackupConfigReader.cs" />
+    <Compile Include="Configurator\Impl\SchedulerReadConfigTask.cs" />
     <Compile Include="FileProcessor\Impl\LocalImpersonator.cs" />
     <Compile Include="FileProcessor\IFileProcessor.cs" />
     <Compile Include="FileProcessor\Impl\FileProcessor.cs" />
     <Compile Include="FileProcessor\Impl\RemoteImpersonator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TaskProcessor\Impl\BackupSchedule.cs" />
-    <Compile Include="TaskProcessor\Impl\BackupTask.cs" />
+    <Compile Include="Configurator\IConfigReader.cs" />
+    <Compile Include="FileProcessor\Impl\BackupTask.cs" />
+    <Compile Include="TaskProcessor\Impl\BaseSchedule.cs" />
+    <Compile Include="TaskProcessor\Impl\BaseTask.cs" />
+    <Compile Include="TaskProcessor\Impl\IntervalSchedule.cs" />
+    <Compile Include="TaskProcessor\Impl\TimeSchedule.cs" />
     <Compile Include="TaskProcessor\ISchedule.cs" />
     <Compile Include="TaskProcessor\ITask.cs" />
-    <Compile Include="TaskProcessor\ITaskProcessor.cs" />
+    <Compile Include="TaskProcessor\IScheduler.cs" />
     <Compile Include="TaskProcessor\ITaskQueue.cs" />
-    <Compile Include="TaskProcessor\Impl\TaskProcessor.cs" />
+    <Compile Include="TaskProcessor\Impl\Scheduler.cs" />
     <Compile Include="TaskProcessor\Impl\TaskQueue.cs" />
   </ItemGroup>
   <ItemGroup>

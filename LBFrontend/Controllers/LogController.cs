@@ -19,7 +19,7 @@ namespace LBFrontend.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Logs.ToList());
+            return View(db.Logs.OrderByDescending(l => l.LogDateTime).Take(1000).ToList());
         }
 
         //

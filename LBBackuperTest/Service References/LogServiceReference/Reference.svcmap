@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="294936ce-31e7-47b5-b190-4bcd39dc2cbf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://127.0.0.1/LogService/LogService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LogService.xsd" MetadataType="Schema" ID="8b5b9761-4e25-4b01-87f4-5a4f1aebebc8" SourceId="1" SourceUrl="http://127.0.0.1/LogService/LogService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LogService1.xsd" MetadataType="Schema" ID="f6269315-d94d-433f-897f-8e6356d0ce61" SourceId="1" SourceUrl="http://127.0.0.1/LogService/LogService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LogService.wsdl" MetadataType="Wsdl" ID="d7f67281-6bc9-40c6-9ebd-366f6c1447ca" SourceId="1" SourceUrl="http://127.0.0.1/LogService/LogService.svc?wsdl" />
+    <MetadataFile FileName="LogService.disco" MetadataType="Disco" ID="38ef9cdc-f214-4de2-9bfa-c5d7f86b061f" SourceId="1" SourceUrl="http://127.0.0.1/LogService/LogService.svc?disco" />
+    <MetadataFile FileName="LogService2.xsd" MetadataType="Schema" ID="cf1b7ac0-f908-44c6-8565-e37c35202c5a" SourceId="1" SourceUrl="http://127.0.0.1/LogService/LogService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

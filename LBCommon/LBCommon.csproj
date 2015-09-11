@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClass.cs" />
     <Compile Include="Helpers\WcfHelper.cs" />
     <Compile Include="Interfaces\IBackupScheduleDef.cs" />
     <Compile Include="Interfaces\IBackupTaskDef.cs" />

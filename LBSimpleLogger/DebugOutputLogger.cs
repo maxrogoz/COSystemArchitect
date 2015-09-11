@@ -16,7 +16,7 @@ namespace LBLogger
     {
         #region ILogWriter Members
 
-        public void WriteLog(System.Diagnostics.EventLogEntryType messageType, string message)
+        public void WriteLog(EventLogEntryType messageType, string message)
         {
             Debug.WriteLine(String.Format("{0}: {1}", messageType.ToString(), message));
         }

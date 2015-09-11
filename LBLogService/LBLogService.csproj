@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{391983EC-EF71-49EB-BBC2-CC54DE6F1FFC}</ProjectGuid>
+    <ProjectGuid>{05380B1F-687A-49DE-990D-99243AE10CD9}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LBBackupTaskService</RootNamespace>
-    <AssemblyName>LBBackupTaskService</AssemblyName>
+    <RootNamespace>LBLogService</RootNamespace>
+    <AssemblyName>LBLogService</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseIISExpress>true</UseIISExpress>
@@ -62,24 +62,23 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BackupTaskService.svc" />
+    <Content Include="LogService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackupTaskClient.cs" />
-    <Compile Include="BackupTaskService.svc.cs">
-      <DependentUpon>BackupTaskService.svc</DependentUpon>
+    <Compile Include="ILogClient.cs" />
+    <Compile Include="LogClient.cs" />
+    <Compile Include="LogService.svc.cs">
+      <DependentUpon>LogService.svc</DependentUpon>
     </Compile>
-    <Compile Include="IBackupTaskClient.cs" />
-    <Compile Include="IBackupTaskService.cs" />
+    <Compile Include="ILogService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebServiceBackupConfigReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\PublishProfiles\BackupTaskService.pubxml" />
+    <None Include="Properties\PublishProfiles\LogService.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -88,10 +87,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LBBackuper\LBBackuper.csproj">
-      <Project>{3613b1d2-7c1d-4d58-8c02-a7b334faee82}</Project>
-      <Name>LBBackuper</Name>
-    </ProjectReference>
     <ProjectReference Include="..\LBCommon\LBCommon.csproj">
       <Project>{e7fb858c-abef-4bc4-a240-f41c0d6ac535}</Project>
       <Name>LBCommon</Name>
@@ -100,9 +95,6 @@
       <Project>{3138b216-1997-4e41-b923-bf79cdf2bf99}</Project>
       <Name>LBDataModel</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -117,9 +109,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>56078</DevelopmentServerPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52603/</IISUrl>
+          <IISUrl>http://localhost:49440/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

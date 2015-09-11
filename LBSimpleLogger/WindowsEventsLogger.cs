@@ -16,6 +16,8 @@ namespace LBLogger
     {
         public WindowsEventsLogger(string applicationName)
         {
+            if (String.IsNullOrEmpty(applicationName))
+                throw new ArgumentNullException("WindowsEventsLogger: applicationName should be not empty");
             _applicationName = applicationName;
             if (!EventLog.SourceExists(applicationName))
             {

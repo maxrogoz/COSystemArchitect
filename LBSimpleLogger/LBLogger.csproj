@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Channels" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +52,10 @@
     <ProjectReference Include="..\LBCommon\LBCommon.csproj">
       <Project>{e7fb858c-abef-4bc4-a240-f41c0d6ac535}</Project>
       <Name>LBCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LBLogService\LBLogService.csproj">
+      <Project>{05380b1f-687a-49de-990d-99243ae10cd9}</Project>
+      <Name>LBLogService</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

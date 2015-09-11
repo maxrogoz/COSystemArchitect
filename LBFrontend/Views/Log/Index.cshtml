@@ -6,6 +6,8 @@
 
 <h2>@ViewBag.Title</h2>
 
+@Html.ActionLink("Refresh", "Index", "Log")
+
 <table>
     <tr>
         <th>
@@ -37,9 +39,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Service)
         </td>
-        <th>
+        <td>
             @Html.DisplayFor(model => item.MessageType)
-        </th>
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Message)
         </td>
@@ -47,3 +49,9 @@
 }
 
 </table>
+
+<script>
+    setTimeout(function(){
+        location.reload();
+    }, 60000);
+</script>

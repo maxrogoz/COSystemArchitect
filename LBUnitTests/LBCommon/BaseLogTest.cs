@@ -9,7 +9,7 @@ namespace LBCommonTests
     [TestClass]
     public class BaseLogTest
     {
-        static string testAppName = "Test App Name";
+        //static string testAppName = "Test App Name";
         
         [TestMethod]
         public void TestWrite()

@@ -12,7 +12,7 @@ using LBCommon;
 
 namespace LBBackuper
 {
-    public class TaskProcessor : ITaskProcessor, IDisposable
+    public class Scheduler : BaseClass, IScheduler, IDisposable
     {
         // Pause between main thread iteration
         private const int WAIT_INTERVAL = 2000;
@@ -23,7 +23,32 @@ namespace LBBackuper
         {
             lock (_schedulesSyncro)
             {
-                _schedules.Add(schedule, new DateTimeBox());
+                _schedules.Add(schedule);
+            }
+        }
+
+        public void AddSchedules(ICollection<ISchedule> schedules)
+        {
+            lock (_schedulesSyncro)
+            {
+                foreach(var schedule in schedules)
+                    _schedules.Add(schedule);
+            }
+        }
+
+        public void DeleteSchedule(ISchedule schedule)
+        {
+            lock (_schedulesSyncro)
+            {
+                _schedules.Remove(schedule);
+            }
+        }
+
+        public void Clear()
+        {
+            lock (_schedulesSyncro)
+            {
+                _schedules.Clear();
             }
         }
 
@@ -47,12 +72,6 @@ namespace LBBackuper
 
         #endregion
 
-        [Inject]
-        public ITaskQueue Queue { get; set; }
-
-        [Inject]
-        public ILog Logger { get; set; }
-
         #region IDisposable Members
 
         public void Dispose()
@@ -60,7 +79,7 @@ namespace LBBackuper
             Stop();
         }
 
-        ~TaskProcessor()
+        ~Scheduler()
         {
             Stop();
         }
@@ -69,7 +88,6 @@ namespace LBBackuper
 
         private void Run()
         {
-            Logger.WriteInfo("Worker thread started");
             while (!_stoped)
             {
                 try
@@ -83,34 +101,25 @@ namespace LBBackuper
                 }
                 catch (Exception e)
                 {
-                    Logger.WriteError("Error while processing the schedule\n" + e.Message);
+                    Logger.WriteError("Scheduler: Error while processing the schedule\n" + e.Message);
                 }
             }
-            Logger.WriteInfo("Worker thread stoped");
         }
 
         private void DoProcessTasks()
         {
             lock (_schedulesSyncro)
             {
-                DateTime now = DateTime.Now;
-                foreach (ISchedule sch in _schedules.Keys)
+                foreach (ISchedule sch in _schedules)
                 {
-                    if (sch.Time.Hours == now.Hour && sch.Time.Minutes == now.Minute)
-                    {
-                        DateTimeBox dtb = _schedules[sch];
-                        if (Math.Abs((now - dtb.date).TotalMinutes) > 1)
-                        {
-                            dtb.date = now;
-                            Queue.QueueTask(sch.Task);
-                        }
-                    }
+                    if (sch.CheckSchedule())
+                        Queue.QueueTask(sch.Task);
                 }
             }
         }
 
-        private class DateTimeBox { public DateTime date = new DateTime(); }
-        private Dictionary<ISchedule, DateTimeBox> _schedules = new Dictionary<ISchedule, DateTimeBox>();
+        protected ITaskQueue Queue = Kernel.Get<ITaskQueue>();
+        private List<ISchedule> _schedules = new List<ISchedule>();
         private bool _stoped = false;
         private Object _schedulesSyncro = new Object();
         private Thread _mainThread;

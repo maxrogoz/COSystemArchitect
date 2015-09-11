@@ -19,7 +19,7 @@ namespace LBBackuper
         /// <param name="user">Delegate, executed in impersonate mode</param>
         public static void ImpersonateRemoteUser(IUserDef user, string remotePath, Action impersonateDelegate)
         {
-            if (user == null)
+            if (user == null || user.Login == null)
             {
                 impersonateDelegate();
                 return;
